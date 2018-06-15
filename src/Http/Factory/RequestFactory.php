@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * Author: Xooxx <xooxx.dev@gmail.com>
+ * Date: 11/21/15
+ * Time: 3:26 PM.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+namespace Xooxx\JsonApi\Http\Factory;
+
+use Xooxx\JsonApi\Http\Request\Request;
+/**
+ * Class RequestFactory.
+ */
+class RequestFactory
+{
+    /**
+     * @var Request
+     */
+    protected static $request;
+    /**
+     * @return Request
+     */
+    public static function create()
+    {
+        if (self::$request) {
+            return self::$request;
+        }
+        self::$request = new Request();
+        return self::$request;
+    }
+}
