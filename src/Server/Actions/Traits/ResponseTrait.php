@@ -41,7 +41,7 @@ trait ResponseTrait
      *
      * @return ResponseInterface
      */
-    protected function addHeaders(ResponseInterface $response)
+    protected function addHeaders($response)
     {
         return $response;
     }
