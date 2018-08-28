@@ -2,10 +2,13 @@
 
 namespace Xooxx\JsonApi\Server\Actions\Exceptions;
 
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
+
 /**
  * Class ForbiddenException.
  */
-class ForbiddenException extends \Exception
+class ForbiddenException extends HttpException
 {
     private $title = 'Forbidden';
     /**
@@ -14,7 +17,7 @@ class ForbiddenException extends \Exception
      */
     public function __construct($message, $previous = null)
     {
-        parent::__construct($message, 403, $previous);
+        parent::__construct(403, $message, $previous);
     }
     /**
      * @param string $title
